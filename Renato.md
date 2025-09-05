@@ -11,7 +11,9 @@ classDiagram
   class Pedido {
     - id: int
     - data: Date
-    - status: String 
+    - status: String
+    - cliente : String
+    - listaDeProdutos: String
     + confirmarPedido(): void
     + getStatus(): String
   }
@@ -28,3 +30,4 @@ classDiagram
   Funcionario "1" o-- "*" Venda : registra
   Pedido "1" o-- "*" Produto : contém
   Pedido "1" o-- "1" Fornecedor : feito_para
+  Venda o-- Pedido
