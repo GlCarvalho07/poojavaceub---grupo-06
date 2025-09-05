@@ -48,7 +48,7 @@ classDiagram
     Instrumento --|> Metais
     Instrumento --|> Percussao
 
-```mermaid
+
 classDiagram
   class Venda {
     - id: int
@@ -82,7 +82,7 @@ classDiagram
   Pedido "1" o-- "1" Fornecedor : feito_para
   Venda o-- Pedido
 
-```mermaid
+
 classDiagram
 
 class Usuario {
