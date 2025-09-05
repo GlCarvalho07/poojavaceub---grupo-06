@@ -5,7 +5,7 @@ class Usuario {
   +String nome
   +String email
   +String senha
-  +criarArquivo() Usuario.md
+  +criar() Usuario.md
 }
 
 class Cliente {
