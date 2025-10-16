@@ -1,40 +1,56 @@
-import java.util.*;
-
+// Entidade Funcionario
 public class Funcionario {
-  
-    private int id;
-    private String nome;
-    private int codigo;
-    private List<Produto> produtos;
-    private List<Venda> vendas;
+    private int id; // int id (gerado no repositório) [cite: 5]
+    private String nome; // String nome [cite: 6]
+    private double salario; // double salario [cite: 7]
+    private String matricula; // String matricula [cite: 8]
 
-    public Funcionario(int id, String nome){
-    this.id = id;
-    this.nome = nome;    
-    this.produtos = new ArrayList<>();
-    produtos.add("Violão");
-    produtos.add("Guitara");
-    produtos.add("Bateria");
+    // Construtor usado no cadastro (id será setado no repositório)
+    public Funcionario(String nome, double salario, String matricula) {
+        this.nome = nome;
+        this.salario = salario;
+        this.matricula = matricula;
     }
-    public void cadastrarProduto(Produto P){
-        produto.add(P);    
+
+    // Getters
+    public int getId() {
+        return id;
     }
-    public Produto consultarProduto(int codigo) {
-       
-        for (Produto p : produtos){
-            if (p.getCodigo() == codigo) return p;
-        }
-        return null;
-       System.out.println("Funcionário Consulta"+this.codigo+ "o codigo do produto");
+
+    public String getNome() {
+        return nome;
     }
-    public Venda gerarVenda(int idVenda){
-        System.out.println("O Funcionário está "+this.id+"consultando a venda com o ID do produto");
-       
-        return null;
+
+    public double getSalario() {
+        return salario;
     }
-    public Venda consultarVenda(int idVenda){
-        for (Venda v : vendas) {
-            if (v.getId() == idVenda) return v;
+
+    public String getMatricula() {
+        return matricula;
     }
-    return null;
+
+    // Setters (necessários para o Repositório e a Atualização)
+    public void setId(int id) { // Setter para o Repositório gerar o ID [cite: 24]
+        this.id = id;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    @Override
+    public String toString() {
+        return "ID: " + id +
+               " | Nome: " + nome +
+               " | Salário: R$ " + String.format("%.2f", salario) +
+               " | Matrícula: " + matricula;
+    }
 }
